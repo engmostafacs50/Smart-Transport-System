@@ -7,7 +7,7 @@
       fx:controller="com.smarttransport.controller.LoginController">
     
     <Label text="Smart Transport Login" style="-fx-text-fill: #0fbcf9; -fx-font-size: 26px; -fx-font-weight: bold;" />
-    
+
     <TextField fx:id="nameField" promptText="Enter Name" 
                style="-fx-background-radius: 20; -fx-background-color: #3d3d3d; -fx-text-fill: white; -fx-padding: 10;" />
     

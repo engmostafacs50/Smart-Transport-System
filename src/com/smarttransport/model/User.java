@@ -11,11 +11,11 @@ public class User implements Serializable {
     }
     static private User current_user ; 
 
-    String get_id()
+    public String get_id()
     {
         return id ; 
     }
-    String get_name()
+    public String get_name()
     {
         return name ; 
     }

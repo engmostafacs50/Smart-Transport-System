@@ -25,14 +25,27 @@ public class LoginController {
             goToDashboard();
         }
     }
-
-    private void goToDashboard() {
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("/com/smarttransport/view/Dashboard.fxml"));
-            Stage stage = (Stage) nameField.getScene().getWindow();
-            stage.setScene(new Scene(root));
-        } catch (Exception e) {
-            e.printStackTrace();
+private void goToDashboard() {
+    try {
+        // 1. التأكد من وجود الملف
+        var resource = getClass().getResource("/com/smarttransport/view/Dashboard.fxml");
+        if (resource == null) {
+            System.err.println("خطأ: ملف Dashboard.fxml غير موجود في المسار المحدد!");
+            return;
         }
+
+        Parent root = FXMLLoader.load(resource);
+        Stage stage = (Stage) nameField.getScene().getWindow();
+        
+        // 2. تصميم Scene جديد (ممكن نحدد الحجم هنا عشان نضمن ظهوره)
+        Scene dashboardScene = new Scene(root);
+        stage.setScene(dashboardScene);
+        stage.centerOnScreen(); // عشان الواجهة تظهر في نص الشاشة
+        stage.show();
+        
+    } catch (Exception e) {
+        System.err.println("حصلت مشكلة وأنا بفتح الداشبورد:");
+        e.printStackTrace(); 
     }
+}
 }

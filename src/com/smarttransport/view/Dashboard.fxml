@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<HBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.smarttransport.controller.DashboardController">
+    <VBox spacing="20" style="-fx-background-color: #2c3e50; -fx-padding: 30; -fx-pref-width: 250;">
+        <children>
+            <Label text="SMART PASS" style="-fx-text-fill: #0fbcf9; -fx-font-size: 22; -fx-font-weight: bold;" />
+            <Separator opacity="0.2" />
+            
+            <VBox spacing="5">
+                <Label text="Welcome," style="-fx-text-fill: #ecf0f1; -fx-font-size: 14;" />
+                <Label fx:id="userNameLabel" text="User Name" style="-fx-text-fill: white; -fx-font-size: 18; -fx-font-weight: bold;" />
+                <Label fx:id="userIdLabel" text="ID: 0000" style="-fx-text-fill: #bdc3c7; -fx-font-size: 12;" />
+            </VBox>
+
+            <Region VBox.vgrow="ALWAYS" />
+            
+            <Button onAction="#handleLogout" text="Logout" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-background-radius: 10; -fx-pref-width: 200;" />
+        </children>
+    </VBox>
+
+    <VBox spacing="30" style="-fx-background-color: #f1f2f6; -fx-padding: 40;" HBox.hgrow="ALWAYS">
+        <children>
+            <Label text="Travel Dashboard" style="-fx-font-size: 28; -fx-font-weight: bold; -fx-text-fill: #2f3542;" />
+            
+            <HBox spacing="20">
+                <VBox spacing="10" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 15; -fx-pref-width: 300; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);">
+                    <Label text="Current Balance" style="-fx-text-fill: #747d8c; -fx-font-size: 14;" />
+                    <Label fx:id="balanceLabel" text="0.00 EGP" style="-fx-font-size: 30; -fx-font-weight: bold; -fx-text-fill: #2ecc71;" />
+                </VBox>
+
+                <VBox spacing="10" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 15; -fx-pref-width: 300; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);">
+                    <Label text="Subscription Type" style="-fx-text-fill: #747d8c; -fx-font-size: 14;" />
+                    <Label fx:id="cardTypeLabel" text="Regular" style="-fx-font-size: 24; -fx-font-weight: bold; -fx-text-fill: #3498db;" />
+                </VBox>
+            </HBox>
+
+            <Button onAction="#handleStartTrip" text="START NEW TRIP" 
+                    style="-fx-background-color: #2f3542; -fx-text-fill: white; -fx-font-size: 18; -fx-font-weight: bold; -fx-padding: 20 50; -fx-background-radius: 15; -fx-cursor: hand;" />
+            
+            <Label fx:id="statusLabel" text="Ready for your next journey" style="-fx-text-fill: #a4b0be;" />
+        </children>
+    </VBox>
+</HBox>
